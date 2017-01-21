@@ -13,8 +13,8 @@ class Api{
 		$this->input = (object)$input;
 
 		// retrieve the table and key from the path
-		$this->table = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
-		$this->id = array_shift($request)+0;
+		$this->table = preg_replace('/[^a-z0-9_]+/i','',array_shift($this->request));
+		$this->id = array_shift($this->request)+0;
 
 		# code...
 	}
@@ -22,7 +22,7 @@ class Api{
 	function initAction(){
 		// see what kind of method were dealing with
 		// then were going to call the table function to that method
-		switch ($method):
+		switch ($this->method):
 			case 'GET':
 				break;
 			case 'PUT':
@@ -35,6 +35,6 @@ class Api{
 	}
 
 	function testTable(){
-		
+
 	}
 }

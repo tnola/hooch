@@ -5,4 +5,4 @@ header('Content-Type: application/json; charset=utf-8');
 // get the HTTP method, path and body of the request
 $api = new Api();
  
-echo json_encode(array('require'=>$request, 'input'=>$input, 'method'=>$method, 'post'=>$_POST));
+echo json_encode(array('require'=>$api->request, 'input'=>$api->input, 'method'=>$api->method, 'post'=>$_POST));
